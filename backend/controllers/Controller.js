@@ -53,12 +53,11 @@ exports.putResident = (req, res, next) => {
     io.getIO().emit("residents", {
       data: req.body.name,
     });
-    res
-      .json({
-        message: "Created Successfully",
-        disease: result,
-      })
-      .catch((err) => console.log(err));
+  }).catch(err => console.log(err));
+
+  res.json({
+    message: "Created Successfully",
+    // disease: result,
   });
 };
 
